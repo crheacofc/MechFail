@@ -188,7 +188,7 @@ centers_tips ='0.0 0.0 0.0 0.0'
 [./youngsmodulusinit]
 variable = YoungsModulus
 type = readinic
-dataFile = '/home/crhea/Dropbox/Research/Kidney-Stone/sheep/mesh/MechFrac_E.txt'
+dataFile = 'mesh/MechFrac_E.txt'
 [../]
 []
 
