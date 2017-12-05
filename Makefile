@@ -6,7 +6,7 @@
 # MOOSE_DIR        - Root directory of the MOOSE project 
 #
 EXAMPLE_DIR        ?= $(shell dirname `pwd`)
-MOOSE_DIR          ?= /home/crhea/projects/moose
+MOOSE_DIR          ?= /home/clr56/projects/moose
 
 
 ###############################################################################
