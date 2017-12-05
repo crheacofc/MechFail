@@ -1,0 +1,59 @@
+Error opening ExodusII mesh file: /home/clr56/Documents/MechFail/mesh/MechFrac.e
+[New LWP 30409]
+[Thread debugging using libthread_db enabled]
+0x00000031ef4ac86d in waitpid () from /lib64/libc.so.6
+To enable execution of this file add
+	add-auto-load-safe-path /opt/moose-compilers/gcc_new/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/clr56/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/clr56/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00000031ef4ac86d in waitpid () from /lib64/libc.so.6
+#1  0x00000031ef43e479 in do_system () from /lib64/libc.so.6
+#2  0x00000031ef43e7b0 in system () from /lib64/libc.so.6
+#3  0x00007f907b3cf569 in libMesh::print_trace(std::basic_ostream<char, std::char_traits<char> >&) () from /home/clr56/projects/moose/scripts/../libmesh/installed/lib/libmesh_opt.so.0
+#4  0x00007f907b3cc164 in libMesh::MacroFunctions::report_error(char const*, int, char const*, char const*) () from /home/clr56/projects/moose/scripts/../libmesh/installed/lib/libmesh_opt.so.0
+#5  0x00007f907b6f2679 in libMesh::ExodusII_IO_Helper::open(char const*, bool) () from /home/clr56/projects/moose/scripts/../libmesh/installed/lib/libmesh_opt.so.0
+#6  0x00007f907b6ed9a3 in libMesh::ExodusII_IO::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) () from /home/clr56/projects/moose/scripts/../libmesh/installed/lib/libmesh_opt.so.0
+#7  0x00007f907b80db87 in libMesh::NameBasedIO::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) () from /home/clr56/projects/moose/scripts/../libmesh/installed/lib/libmesh_opt.so.0
+#8  0x00007f907b848d9d in libMesh::UnstructuredMesh::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void*, bool, bool) () from /home/clr56/projects/moose/scripts/../libmesh/installed/lib/libmesh_opt.so.0
+#9  0x00007f907caf4d07 in FileMesh::buildMesh() () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#10 0x00007f907cb08e58 in MooseMesh::init() () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#11 0x00007f907d0709c3 in SetupMeshAction::act() () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#12 0x00007f907d0b61c6 in ActionWarehouse::executeActionsWithAction(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#13 0x00007f907d0b771b in ActionWarehouse::executeAllActions() () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#14 0x00007f907ccf3329 in MooseApp::runInputFile() () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#15 0x00007f907ccf0b4e in MooseApp::run() () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#16 0x00000000004105d3 in main ()
+[0] ../src/mesh/exodusII_io_helper.C, line 359, compiled Dec  5 2017 at 12:31:21
+
+
+[31m
+
+*** ERROR ***
+Error opening ExodusII mesh file: /home/clr56/Documents/MechFail/mesh/MechFrac.e[39m
+
+
+[New LWP 30409]
+[Thread debugging using libthread_db enabled]
+0x00000031ef4ac86d in waitpid () from /lib64/libc.so.6
+To enable execution of this file add
+	add-auto-load-safe-path /opt/moose-compilers/gcc_new/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/clr56/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/clr56/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00000031ef4ac86d in waitpid () from /lib64/libc.so.6
+#1  0x00000031ef43e479 in do_system () from /lib64/libc.so.6
+#2  0x00000031ef43e7b0 in system () from /lib64/libc.so.6
+#3  0x00007f907b3cf569 in libMesh::print_trace(std::basic_ostream<char, std::char_traits<char> >&) () from /home/clr56/projects/moose/scripts/../libmesh/installed/lib/libmesh_opt.so.0
+#4  0x00007f907cd406b7 in moose::internal::mooseErrorRaw(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#5  0x00007f907ccfd6f4 in _Z10mooseErrorIJPKcEEvDpOT_ () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#6  0x00007f907ccf0be1 in MooseApp::run() () from /home/clr56/projects/moose/framework/libmoose-opt.so.0
+#7  0x00000000004105d3 in main ()

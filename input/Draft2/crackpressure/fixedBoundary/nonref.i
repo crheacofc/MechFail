@@ -1,5 +1,5 @@
 [Mesh]
-file = mesh/MechFrac.e
+file = /home/clr56/Documents/MechFail/mesh/MechFrac.e
 boundary_id = '1 2'
 boundary_name = 'outside inside'
 []
@@ -167,13 +167,11 @@ property = praft_trace_st
     f_name = f_couple
     #use_displaced_mesh = false
  [../]
-
 [./phi_rate]
     type = TimeDerivative
     variable = phi
     #use_displaced_mesh = true
 [../]
-
 []
 
 
@@ -188,7 +186,7 @@ centers_tips ='0.0 0.0 0.0 0.0'
 [./youngsmodulusinit]
 variable = YoungsModulus
 type = readinic
-dataFile = 'mesh/MechFrac_E.txt'
+dataFile = '/home/clr56/Documents/MechFail/mesh/MechFrac_E.txt'
 [../]
 []
 
@@ -225,6 +223,7 @@ dataFile = 'mesh/MechFrac_E.txt'
     enable_jit = true
     derivative_order = 2
 [../]
+
 [./free_energy_chemical]
     type = DerivativeParsedMaterial
     block = 1
@@ -250,6 +249,7 @@ dataFile = 'mesh/MechFrac_E.txt'
     enable_jit = true
     derivative_order = 2
 [../]
+
 [./tensfactor]
     type = DerivativeParsedMaterial
     block = 1
@@ -261,12 +261,14 @@ dataFile = 'mesh/MechFrac_E.txt'
     enable_jit = true
     derivative_order = 2
 [../]
+
 [./small_strain_total]
     type = ComputeSmallStrain
     block = 1
     base_name = praft
     displacements = 'disp_x disp_y'
   [../]
+
 [./elasticity2D]
     type = ElasticMaterial2DFracHistoryYM
     block = 1
@@ -281,6 +283,7 @@ dataFile = 'mesh/MechFrac_E.txt'
 split = true
 irrev = false
   [../]
+
 [./elasticity2Denergy]
     type = ElasticEnergyMaterial2DFrac
     block = 1
@@ -289,6 +292,7 @@ irrev = false
     args= 'd'
     derivative_order = 2
   [../]
+
  [./sum_energy]
     type = DerivativeSumMaterial
     block = 1
@@ -342,13 +346,11 @@ irrev = false
       disp_y = disp_y
     [../]
   [../]
-
 []
 
 
 
 [Preconditioning]
-
    [./SMP]
 	type = SMP
 	full = true
@@ -361,47 +363,18 @@ irrev = false
   #solve_type = 'FD'
   solve_type = 'Newton'
   #solve_type = 'PJFNK'
-
-
-
-
-
-
-
-petsc_options_iname = '-pc_type -ksp_grmres_restart -sub_ksp_type -sub_pc_type -pc_asm_overlap'
-petsc_options_value = 'asm      100                  preonly       lu           10'
-
-
-#petsc_options='-ksp_monitor_singular_value'
-petsc_options='-ksp_monitor_singular_value -ksp_converged_reason -ksp_monitor_true_residual'
-
-  #petsc_options= '-ksp_monitor_singular_value -snes_ksp_ew -snes_atol 1.0e-2 --ksp_type #gmres -snes_linesearch_monitor true -#snes_linesearch_maxstep 1e+12  -#snes_linesearch_minlambda 1e-15  -snes_linesearch_rtol 1e-08 -snes_linesearch_atol 1e-15 #-#snes_linesearch_ltol 1e-08 -snes_linesearch_max_it 40 -snes_stol 1e-50 -snes_stol 1e-06  -snes_rtol 1e-06 '
-
-
-
-  #l_max_its = 40
-  #l_tol = 1.0e-6
-  #nl_max_its = 1000
-  #nl_rel_tol = 1e-5
-
-  #l_tol = 1.0e-4
+  petsc_options_iname = '-pc_type -ksp_grmres_restart -sub_ksp_type -sub_pc_type -pc_asm_overlap'
+  petsc_options_value = 'asm      100                  preonly       lu           10'
+  petsc_options='-ksp_monitor_singular_value -ksp_converged_reason -ksp_monitor_true_residual'
   nl_rel_tol = 1.0e-6
   nl_abs_tol = 1.0e-8
-
-
      start_time = 0.0
      end_time = 0.1
      dt = 0.001
-
-
-
-
-
-
   [Debug]
     show_var_residual_norms = true
   []
-
+[]
 
 
 [Outputs]
