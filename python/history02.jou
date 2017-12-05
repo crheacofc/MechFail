@@ -1,0 +1,8 @@
+#!python
+cubit.cmd('set node constraint smart')
+cubit.cmd('import mesh geometry "/home/crhea/Dropbox/Research/Kidney-Stone/sheep/mesh/lith_tri_genref1.e" block all use nodeset sideset feature_angle 135.00 linear merge ')
+cubit.cmd('refine surface 1  numsplit 1 bias 1.0 depth 1 smooth')
+cubit.cmd('undo group begin')
+cubit.cmd('set large exodus file off')
+cubit.cmd('export mesh "/home/crhea/Dropbox/Research/Kidney-Stone/sheep/mesh/lith_tri_genref2.e" dimension 2 overwrite')
+cubit.cmd('undo group end')

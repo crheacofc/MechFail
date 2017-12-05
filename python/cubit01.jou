@@ -1,0 +1,25 @@
+## /home/crhea/Applications/Cubit/bin/clarox
+## Cubit Version 15.0
+## Cubit Build 401220
+## Revised 2015-10-29 13:04:49 -0600 (Thu, 29 Oct 2015)
+## Running 07/24/2017 04:49:22 PM
+## Command Options:
+undo on
+create surface circle radius 7.5 zplane
+create surface circle radius 0.25 zplane
+subtract volume 2 from volume 1
+surface 3 size auto factor 5
+surface 3 size auto factor 5
+mesh surface 3
+surface 3 size auto factor 3
+delete mesh surface 3 propagate
+surface 3 size auto factor 3
+mesh surface 3
+surface 3 size auto factor 4
+delete mesh surface 3 propagate
+surface 3 size auto factor 4
+mesh surface 3
+undo group begin
+set large exodus file off
+export mesh "/home/crhea/Dropbox/Research/Kidney-Stone/sheep/python/lith_square.e" dimension 2 overwrite
+undo group end

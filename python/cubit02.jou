@@ -1,0 +1,13 @@
+## /home/crhea/Applications/Cubit/bin/clarox
+## Cubit Version 15.0
+## Cubit Build 401220
+## Revised 2015-10-29 13:04:49 -0600 (Thu, 29 Oct 2015)
+## Running 10/05/2017 01:51:40 PM
+## Command Options:
+undo on
+import mesh geometry "/home/crhea/Dropbox/Research/Kidney-Stone/sheep/mesh/lith_tri_genref1.e" block all use nodeset sideset feature_angle 135 linear merge
+refine surface 1 numsplit 1 bias 1 depth 1 smooth
+undo group begin
+set large exodus file off
+export mesh "/home/crhea/Dropbox/Research/Kidney-Stone/sheep/mesh/lith_tri_genref2.e" dimension 2 overwrite
+undo group end
