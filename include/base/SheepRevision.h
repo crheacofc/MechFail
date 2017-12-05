@@ -3,6 +3,7 @@
 #ifndef SHEEP_REVISION_H
 #define SHEEP_REVISION_H
 
-#define SHEEP_REVISION "git commit b394989 on 2017-03-21"
+#define SHEEP_REVISION "git commit 4482f6d on 2017-12-05"
+#define SHEEP_VERSION "4482f6d"
 
 #endif // SHEEP_REVISION_H
